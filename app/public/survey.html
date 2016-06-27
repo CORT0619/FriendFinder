@@ -19,6 +19,47 @@
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
+		<script type="text/javascript">
+		$(document).ready(function(){
+			 var qArray = [];
+
+			$('#submit').on('click', function(/*e*/){
+				//e.preventDefault();
+
+			
+				$('input[type=radio]').each(function(){
+
+					if($(this).is(':checked')){
+						qArray.push($(this).val());
+					}
+
+				});	
+
+			var friendName = $('#name').val().trim();
+			var friendPhoto = $('#photo').val().trim();
+
+
+			
+			$.post(
+				"/api/friends",
+				{
+					name: friendName,
+					photo: friendPhoto,
+					scores: qArray
+				},
+				function(results){
+					alert('Survey submitted successfully!');
+				}, 'json');
+			});
+
+
+		});	
+
+
+
+		
+	</script>
+
 </head>
 <body id="survey">
 
@@ -26,7 +67,7 @@
 
 		<h2>Friend Finder Questionnaire</h2>
 
-		<form action="/api/friends" method="POST">
+		<form> <!--action="/api/friends" method="POST"-->
 			<div class="friendInfo">
 				<p><label for="name">Name</label>
 				<input type="text" name="name" id="name" class="form-control"></p>
@@ -140,7 +181,11 @@
 			</div>
 
 
-			<p id="subContainer"><input type="submit" id="submit"></p>
+			<p id="subContainer">
+				<button id="submit">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Submit
+				</button>
+			</p>
 		</form>
 	</div>
 
