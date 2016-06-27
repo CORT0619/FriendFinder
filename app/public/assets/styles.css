@@ -3,6 +3,10 @@ body {
 	text-align:center;
 }
 
+body#survey{
+	background-color: #FFF;
+}
+
 .jumbotron {width: 50%;
 			margin: 50px auto;
 			text-align: center;
@@ -14,12 +18,39 @@ body {
 			box-shadow: 2px 3px 5px 0px rgba(135,127,135,1);
 }
 
-.jumbotron p {color: #343838;
+.jumbotron p {
+	color: #343838;
+}
+
+h2{
+	font-family: 'Hind Madurai', sans-serif;
+	font-weight: bold;
+	color: #005F6B;
+}
+
+label {
+	font-size: 14pt;
+	font-weight: normal;
+	font-family: 'Raleway', sans-serif;
 }
 
 input[type=text] {
-	border-radius: 4px;
-	padding-left: 5px;
+	border-radius: 5px;
+	padding-left: 10px;
+	height: 34px;
+	width: 100%;
+	border: 1px solid lightgray;
+}
+
+div.friendInfo, div.qSection {
+	padding-bottom: 15px;
+	border-bottom: 1px solid lightgray;
+	margin-bottom: 10px;
+}
+
+input[type=radio] {
+	margin-left: 10px;
+	margin-right: 5px;
 }
 
 button#start {
@@ -32,3 +63,54 @@ button#start {
 	color: #FFF;
 	font-weight: bold;
 }
+
+button#start:hover{
+	background-color: #343838;
+}
+
+form {
+	margin: 25px auto;
+	/*border: 1px solid #000;*/
+	text-align: left;
+}
+
+p {
+	font-weight: normal;
+}	 
+
+#subContainer {
+	text-align: center;
+}
+
+p.qHeader{
+	font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16pt;
+	margin-bottom: 0;
+}
+
+p.question{
+	font-size: 14pt;
+	font-family: 'Cormorant', serif;
+	margin-top: 1px;
+	margin-bottom: 2px;
+}
+
+p.options{
+	text-indent: 10px;
+	margin-bottom: 20px;
+}
+
+#submit {
+	max-width: 325px;
+	width: 30%;
+	border-radius: 4px;
+	border: 1px solid #FFF;
+	height: 40px;
+	font-weight: bold;
+	background-color: #005F6B;
+	color: #FFF;
+	font-size: 12pt;
+	font-family: 'Hind Madurai', sans-serif;
+	margin-top: 10px;
+} 
