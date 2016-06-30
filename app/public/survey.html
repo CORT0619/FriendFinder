@@ -187,7 +187,7 @@
 						id: 'popUp',
 						title: 'Successful Match'
 						//html: 'blah'
-					}).html('blah' + "\n" +results);
+					}).html(results);
 
 
 					$(".container").append(newDiv);
@@ -197,7 +197,7 @@
 						draggable: false,
 						resizable: false,
 						autoOpen: true,
-						postition: ['center', 'top'],
+						postition: ['center', 'center'],
 						buttons: [{
 							text: 'OK',
 							click: function(){
@@ -206,7 +206,7 @@
 						}]
 					});
 
-				}/*, 'json'*/);
+				});
 
 			return false;
 		});
