@@ -1,11 +1,12 @@
 var path = require('path');
-//var modal = require('jquery.modal');
 
 //require the data
 var friends = require('../data/friends.js').friends;
 var totalDiff = 0;
 var allDiffs = [];
 var bestMatch = 0;
+var matchedPic = "";
+var matchedName = "";
 
 module.exports = function(app){
 
@@ -40,17 +41,29 @@ module.exports = function(app){
 			console.log(allDiffs[i]);
 		}*/
 
-		var html = "<html><head><body><p>" + bestMatch + "</p></body></html>";
+		
 
 		var newFriend = request.body;
 
 		friends.push(newFriend);
 
 		allDiffs.length = 0;
+
+		matchedPic = JSON.stringify(friends[bestMatch].photo);
+		matchedName = JSON.stringify(friends[bestMatch].name);
+
+		matchedName = matchedName.replace(/\"/g, "");
+
+		//console.log("Matched pic is: " + matchedPic);
+
+		var html = '<p style="text-align: center"><img src=' + matchedPic + ' alt="Matched Friend" height="200" width="200"><br />' + matchedName + '</p>';
+
+		//console.log("best match is " + bestMatch);
+
 		response.send(html);
 
 
-		console.log("best match is " + bestMatch);
+		
 		//response.json(friends);
 
 	});
