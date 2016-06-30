@@ -16,8 +16,6 @@ module.exports = function(app){
 
 	app.post('/api/friends', function(request, response){
 
-		console.log("friends length " + friends.length);
-
 		for(var j=0; j < friends.length; j++){
 
 			for(var i=0; i < 10; i++){
@@ -28,7 +26,7 @@ module.exports = function(app){
 			totalDiff = 0;
 		}
 
-		console.log("allDiffs length " + allDiffs.length);
+		//console.log("allDiffs length " + allDiffs.length);
 
 		for(var x = 1; x < allDiffs.length; x++){
 
@@ -36,11 +34,11 @@ module.exports = function(app){
 				bestMatch = x;
 		}	
 
-		console.log("allDiffs is ");
+		/*console.log("allDiffs is ");
 
 		for(var i=0; i < allDiffs.length; i++){
 			console.log(allDiffs[i]);
-		}
+		}*/
 
 		var html = "<html><head><body><p>" + bestMatch + "</p></body></html>";
 
@@ -48,10 +46,13 @@ module.exports = function(app){
 
 		friends.push(newFriend);
 
-		response.send(html);
-		console.log("best match is " + bestMatch);
-
 		allDiffs.length = 0;
+		response.send(html);
+
+
+		console.log("best match is " + bestMatch);
+		//response.json(friends);
+
 	});
 
 }
