@@ -30,7 +30,8 @@
 				$('input[type=radio]').each(function(){
 
 					if($(this).is(':checked')){
-						qArray.push($(this).val());
+					
+						qArray.push(parseInt($(this).val()));
 					}
 
 				});	
